@@ -10,7 +10,6 @@
 
 #pragma mark - APP_UI
 float const kNavigationBarHeight = 44;
-float const kStatusBarHeight = 20;
 float const kTabbarHeight = 48;
 
 #pragma mark - APP_NETWORK

@@ -33,6 +33,7 @@
 		6B65D6B01E5FCF35000FE0A4 /* PLVerticalCollectionFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B65D6AF1E5FCF35000FE0A4 /* PLVerticalCollectionFlowLayout.m */; };
 		6B65D6B41E600571000FE0A4 /* PLLobbyVerticalCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B65D6B31E600571000FE0A4 /* PLLobbyVerticalCollectionFooterView.m */; };
 		6B6E02761E6CFDBC00582A01 /* PLLobbyVerticalCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E02751E6CFDBC00582A01 /* PLLobbyVerticalCollectionHeaderView.m */; };
+		6B76648B1FC969890000DAC3 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B76648A1FC969890000DAC3 /* YYFPSLabel.m */; };
 		6B7C10AD1E643BA40053C038 /* PLAnimationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C10AC1E643BA40053C038 /* PLAnimationButton.m */; };
 		6B7C10F01E651C020053C038 /* PLRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C10EF1E651C020053C038 /* PLRefreshControl.m */; };
 		6B7C10F41E653FF00053C038 /* tableview_pull_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C10F21E653FF00053C038 /* tableview_pull_refresh@2x.png */; };
@@ -200,6 +201,8 @@
 		6B65D6B31E600571000FE0A4 /* PLLobbyVerticalCollectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLobbyVerticalCollectionFooterView.m; sourceTree = "<group>"; };
 		6B6E02741E6CFDBC00582A01 /* PLLobbyVerticalCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLobbyVerticalCollectionHeaderView.h; sourceTree = "<group>"; };
 		6B6E02751E6CFDBC00582A01 /* PLLobbyVerticalCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLobbyVerticalCollectionHeaderView.m; sourceTree = "<group>"; };
+		6B7664891FC969890000DAC3 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		6B76648A1FC969890000DAC3 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		6B7C10AB1E643BA40053C038 /* PLAnimationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLAnimationButton.h; path = navigationView/PLAnimationButton.h; sourceTree = "<group>"; };
 		6B7C10AC1E643BA40053C038 /* PLAnimationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLAnimationButton.m; path = navigationView/PLAnimationButton.m; sourceTree = "<group>"; };
 		6B7C10EE1E651C020053C038 /* PLRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLRefreshControl.h; sourceTree = "<group>"; };
@@ -481,6 +484,15 @@
 			path = collectionFooterView;
 			sourceTree = "<group>";
 		};
+		6B7664881FC969890000DAC3 /* YYFPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				6B7664891FC969890000DAC3 /* YYFPSLabel.h */,
+				6B76648A1FC969890000DAC3 /* YYFPSLabel.m */,
+			);
+			path = YYFPSLabel;
+			sourceTree = "<group>";
+		};
 		6B7C10ED1E651BEB0053C038 /* customControls */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +628,7 @@
 		6BF80B331E56FAD000D28547 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				6B7664881FC969890000DAC3 /* YYFPSLabel */,
 				6B7C10ED1E651BEB0053C038 /* customControls */,
 				6BF80C141E5BF74300D28547 /* LaunchScreen */,
 				6BF80BCD1E57016800D28547 /* commonViews */,
@@ -1237,6 +1250,7 @@
 				6B65D66F1E5EC45D000FE0A4 /* LiveListLocationRequest.m in Sources */,
 				6B7C10F01E651C020053C038 /* PLRefreshControl.m in Sources */,
 				6BF80C261E5C194200D28547 /* UIView+Extension.m in Sources */,
+				6B76648B1FC969890000DAC3 /* YYFPSLabel.m in Sources */,
 				6BF80BEC1E5A983900D28547 /* AFHTTPSessionManager+PLExtension.m in Sources */,
 				6B65D6871E5EC931000FE0A4 /* PLLobbySongHorizonCollectionViewCell.m in Sources */,
 				6B0945181E6FE6D00017DFFE /* UIImage+Extension.m in Sources */,

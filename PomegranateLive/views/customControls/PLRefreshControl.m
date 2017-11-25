@@ -84,18 +84,22 @@ static CGFloat const kMarginForLblstateWithCenter = 30;
             [self.refreshIndicatorView stopAnimating];
             self.imgViewRefresh.hidden = NO;
             //调换箭头的方向
-            [UIView animateWithDuration:0.25 animations:^{
-                self.imgViewRefresh.transform = CGAffineTransformIdentity;
-            }];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIView animateWithDuration:0.25 animations:^{
+                    self.imgViewRefresh.transform = CGAffineTransformIdentity;
+                }];
+            });
             break;
         }
         case EnumRefreshStateWillRefresh:
         {
             self.lblState.text = @"释放更新";
             self.lblState.centerX = self.centerX + kMarginForLblstateWithCenter;
-            [UIView animateWithDuration:0.25 animations:^{
-                self.imgViewRefresh.transform = CGAffineTransformMakeRotation(M_PI);
-            }];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIView animateWithDuration:0.25 animations:^{
+                    self.imgViewRefresh.transform = CGAffineTransformMakeRotation(M_PI);
+                }];
+            });
             break;
         }
         case EnumRefreshStateBeginRefresh:
@@ -111,9 +115,11 @@ static CGFloat const kMarginForLblstateWithCenter = 30;
             inset.top = kRefreshControlHeight + insetTop;
             if (isStartRefresh) { // 是否为自动刷新 ，解决collectionView 自动刷新带动画的问题
                 self.currentScrollView.contentInset = inset;
-                [UIView animateWithDuration:.25f animations:^{
-                    self.currentScrollView.contentOffset = CGPointMake(0, -inset.top);
-                }];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [UIView animateWithDuration:.25f animations:^{
+                        self.currentScrollView.contentOffset = CGPointMake(0, -inset.top);
+                    }];
+                });
                 [self sendActionsForControlEvents:UIControlEventValueChanged];//通知外界刷新数据
             }else{
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -139,13 +145,14 @@ static CGFloat const kMarginForLblstateWithCenter = 30;
             self.imgViewRefresh.transform = CGAffineTransformIdentity;
             UIEdgeInsets inset = self.currentScrollView.contentInset;
             inset.top = insetTop;
-            
-            [UIView animateWithDuration:.25f animations:^{
-                isInEndAnimation = YES;
-                self.currentScrollView.contentInset = inset;
-            } completion:^(BOOL finished) {
-                isInEndAnimation = NO;
-            }];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIView animateWithDuration:.25f animations:^{
+                    isInEndAnimation = YES;
+                    self.currentScrollView.contentInset = inset;
+                } completion:^(BOOL finished) {
+                    isInEndAnimation = NO;
+                }];
+            });
             break;
         }
         default:

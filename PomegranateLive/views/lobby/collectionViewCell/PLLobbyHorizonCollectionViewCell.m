@@ -165,6 +165,9 @@ static NSString * const lobbyVerticalCollectionFooterViewID = @"lobbyVerticalCol
 {
     if (!_lobbyVerticalCollectionView) {
         _lobbyVerticalCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH , SCREEN_HEIGHT) collectionViewLayout:self.lobbyVerticalCollectionViewFlowLayout];
+        if (@available(iOS 11.0, *)){
+            _lobbyVerticalCollectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
         _lobbyVerticalCollectionView.backgroundColor = [UIColor clearColor];
         _lobbyVerticalCollectionView.contentInset = UIEdgeInsetsMake(kNavigationBarHeight + kStatusBarHeight, 0, kTabbarHeight, 0);
         _lobbyVerticalCollectionView.scrollIndicatorInsets = UIEdgeInsetsMake(kNavigationBarHeight + kStatusBarHeight, 0, kTabbarHeight, 0);
@@ -247,7 +250,7 @@ static NSString * const lobbyVerticalCollectionFooterViewID = @"lobbyVerticalCol
 -(PLRefreshControl *)refreshControl
 {
     if (!_refreshControl) {
-        _refreshControl = [[PLRefreshControl alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 44)];
+        _refreshControl = [[PLRefreshControl alloc]initWithFrame:CGRectMake(0, kStatusBarHeight + kNavigationBarHeight, SCREEN_WIDTH, 44)];
         _refreshControl.hidden = YES;
     }
     return _refreshControl;

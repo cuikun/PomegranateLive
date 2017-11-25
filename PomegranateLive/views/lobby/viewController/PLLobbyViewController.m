@@ -316,6 +316,9 @@ static CGFloat const kMarginForLobbyHorizonCells = 10.f;
 {
     if (!_lobbyHorizonCollectionView) {
         _lobbyHorizonCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH + kMarginForLobbyHorizonCells, SCREEN_HEIGHT) collectionViewLayout:self.lobbyHorizonCollectionViewFlowLayout];
+        if (@available(iOS 11.0, *)){
+            _lobbyHorizonCollectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
         _lobbyHorizonCollectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, kMarginForLobbyHorizonCells);
         _lobbyHorizonCollectionView.backgroundColor = [UIColor colorWithRed:0.94f green:0.95f blue:0.95f alpha:1.00f];
         _lobbyHorizonCollectionView.pagingEnabled = YES;
