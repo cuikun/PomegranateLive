@@ -226,7 +226,12 @@ static CGFloat const kLiveListMenuCollectionViewHeight = 465.f;
 -(PLVerticalCollectionFlowLayout *)liveListMenuCollectionViewFlowLayout
 {
     if (!_liveListMenuCollectionViewFlowLayout) {
-        _liveListMenuCollectionViewFlowLayout = [[PLVerticalCollectionFlowLayout alloc]init];
+        if (@available(iOS 9.0, *)){
+            _liveListMenuCollectionViewFlowLayout = (id)[[UICollectionViewFlowLayout alloc]init];
+            _liveListMenuCollectionViewFlowLayout.sectionHeadersPinToVisibleBounds = YES;
+        }else{
+            _liveListMenuCollectionViewFlowLayout = [[PLVerticalCollectionFlowLayout alloc]init];
+        }
         _liveListMenuCollectionViewFlowLayout.minimumLineSpacing = .1f;
         _liveListMenuCollectionViewFlowLayout.minimumInteritemSpacing = .1f;
         _liveListMenuCollectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;

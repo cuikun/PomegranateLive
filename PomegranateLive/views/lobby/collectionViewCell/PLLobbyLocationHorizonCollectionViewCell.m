@@ -92,7 +92,12 @@ static CGFloat const lobbyLocationVerticalCollectionHeaderViewHeight = 48;
 -(UICollectionViewFlowLayout *)lobbyVerticalCollectionViewFlowLayout
 {
     if (!_lobbyVerticalCollectionViewFlowLayout) {
-        _lobbyVerticalCollectionViewFlowLayout = [[PLVerticalCollectionFlowLayout alloc]init]; //设置flowLayout的类型PLVerticalCollectionFlowLayout
+        if (@available(iOS 9.0, *)){
+            _lobbyVerticalCollectionViewFlowLayout = (id)[[UICollectionViewFlowLayout alloc]init];
+            _lobbyVerticalCollectionViewFlowLayout.sectionHeadersPinToVisibleBounds = YES;
+        }else{
+            _lobbyVerticalCollectionViewFlowLayout = [[PLVerticalCollectionFlowLayout alloc]init];
+        }
         _lobbyVerticalCollectionViewFlowLayout.minimumLineSpacing = .1f;
         _lobbyVerticalCollectionViewFlowLayout.minimumInteritemSpacing = .1f;
         _lobbyVerticalCollectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
